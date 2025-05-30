@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign Up</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-black text-white min-h-screen flex items-center justify-center">
+
+  <div class="relative w-full min-h-screen bg-cover bg-center flex items-center justify-center px-6 md:px-12"
+       style="background-image: url('/static/images/pexels-albinberlin-919073.jpg');">
+       
+    <!-- Overlay -->
+    <div class="absolute inset-0 bg-black/70"></div>
+
+    <!-- Signup Form -->
+    <div class="relative z-10 w-full max-w-md space-y-6 bg-white/60 text-black rounded-xl p-8 backdrop-blur-sm">
+      <!-- Error Message -->
+      <div class="error">
+        <p style="color: tomato;">{{ error }}</p>
+      </div>
+
+      <!-- Title -->
+      <div>
+        <h2 class="text-3xl font-semibold">Sign Up</h2>
+        <div class="w-12 h-1 bg-gray-800 mt-2"></div>
+      </div>
+
+      <form action="/signup" method="POST" class="space-y-4">
+        <!-- Full Name -->
+        <div>
+          <label class="block text-xs font-bold text-gray-700 uppercase mb-1">Full Name</label>
+          <input type="text" placeholder="John Doe" name="fullname"
+                 class="w-full border-b-2 border-gray-300 focus:outline-none focus:border-black py-2 placeholder-gray-400" />
+        </div>
+
+        <!-- Email -->
+        <div>
+          <label class="block text-xs font-bold text-gray-700 uppercase mb-1">Email</label>
+          <input type="email" placeholder="example@email.com" name="email"
+                 class="w-full border-b-2 border-gray-300 focus:outline-none focus:border-black py-2 placeholder-gray-400" />
+        </div>
+
+        <!-- Mobile Number -->
+        <div>
+          <label class="block text-xs font-bold text-gray-700 uppercase mb-1">Mobile Number</label>
+          <input type="tel" placeholder="+1234567890" name="mobile_no"
+                 class="w-full border-b-2 border-gray-300 focus:outline-none focus:border-black py-2 placeholder-gray-400" />
+        </div>
+
+        <!-- Password -->
+        <div>
+          <label class="block text-xs font-bold text-gray-700 uppercase mb-1">Password</label>
+          <div class="relative">
+            <input type="password" name="password"
+                   class="w-full border-b-2 border-gray-300 focus:outline-none focus:border-black py-2 pr-10 placeholder-gray-400"
+                   placeholder="••••••••••••" />
+            <span class="absolute right-2 top-1/2 -translate-y-1/2 cursor-pointer text-gray-500">👁️</span>
+          </div>
+        </div>
+
+        <!-- Confirm Password -->
+        <div>
+          <label class="block text-xs font-bold text-gray-700 uppercase mb-1">Confirm Password</label>
+          <div class="relative">
+            <input type="password" name="confirm_password"
+                   class="w-full border-b-2 border-gray-300 focus:outline-none focus:border-black py-2 pr-10 placeholder-gray-400"
+                   placeholder="••••••••••••" />
+            <span class="absolute right-2 top-1/2 -translate-y-1/2 cursor-pointer text-gray-500">👁️</span>
+          </div>
+        </div>
+
+        <!-- Submit -->
+        <button class="w-full bg-[#23464b] text-white py-3 rounded-md font-semibold hover:bg-[#1b373c] transition">
+          Sign Up
+        </button>
+      </form>
+
+      <!-- Divider -->
+      <div class="flex items-center justify-center gap-4 text-sm text-gray-500">
+        <hr class="flex-grow border-gray-300" />
+        OR
+        <hr class="flex-grow border-gray-300" />
+      </div>
+
+      <!-- Google -->
+      <button
+        class="w-full border border-gray-300 py-2 rounded-md flex items-center justify-center gap-2 hover:bg-gray-50">
+        <img src="https://www.google.com/favicon.ico" class="w-5 h-5" alt="Google" />
+        Continue With Google
+      </button>
+
+      <!-- Facebook -->
+      <button
+        class="w-full border border-gray-300 py-2 rounded-md flex items-center justify-center gap-2 hover:bg-gray-50">
+        <img src="https://www.facebook.com/favicon.ico" class="w-5 h-5" alt="Facebook" />
+        Continue With Facebook
+      </button>
+
+      <!-- Redirect -->
+      <p class="text-center text-sm text-gray-600">
+        Already have an account?
+        <a href="/login" class="text-yellow-500 font-semibold ml-1">Log In</a>
+      </p>
+    </div>
+  </div>
+
+</body>
+</html>
